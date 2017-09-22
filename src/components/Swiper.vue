@@ -1,16 +1,7 @@
 <template>
-  <div>
-    <div id="header">
-
-    </div>
-    <div id="center">
-
-    </div>
-    <div id="footer">
-
-    </div>
+  <div id="swiper">
+    <swiper :list="demo03_list" auto style="width:80%;margin:0 auto;" height="180px" dots-class="custom-bottom" dots-position="center"></swiper>
   </div>
-
 </template>
 
 <script>
