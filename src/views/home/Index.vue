@@ -10,19 +10,30 @@
         </marquee>
       </cell>
     </div>
-
     <div class="nav">
-      <flexbox :gutter="0">
-        <flexbox-item v-for="(item, index) in navList" :key="index">
-          <shop-nav class="nva-icon" :title="item.title" :src="item.img" :link="item.url"></shop-nav>
-        </flexbox-item>
-      </flexbox>
+      <div class="matrix-nav">
+        <flexbox :gutter="0">
+          <flexbox-item v-for="(item, index) in navList" :key="index">
+            <shop-nav class="nva-icon" :title="item.title" :src="item.img" :link="item.url"></shop-nav>
+          </flexbox-item>
+        </flexbox>
+      </div>
+
+      <div class="recommend">
+        <divider style="width: 140px; margin: 0 auto; font-size: 12px; color: #EDD498">{{ recommend }}</divider>
+        <scroller lock-y :scrollbar-x=false>
+          <div class="box1">
+            <div class="box1-item" v-for="i in 7"><span>{{' ' + i + ' '}}</span></div>
+          </div>
+        </scroller>
+      </div>
     </div>
+
   </div>
 </template>
 
 <script>
-  import { Swiper, SwiperItem, Cell, Marquee, MarqueeItem, Flexbox, FlexboxItem } from 'vux'
+  import { Swiper, SwiperItem, Cell, Marquee, MarqueeItem, Flexbox, FlexboxItem, Divider, Scroller } from 'vux'
   import ShopNav from '@/components/ShopNav'
 
   const baseList = [{
@@ -71,7 +82,7 @@
         demo02_index: 1,
         goToCell: '跳转',
         news: '公告',
-        text: '公告',
+        recommend: '品牌特卖',
       }
     },
     components: {
@@ -82,7 +93,9 @@
       MarqueeItem,
       Flexbox,
       FlexboxItem,
-      ShopNav
+      ShopNav,
+      Divider,
+      Scroller
     },
     methods: {
       demo01_onIndexChange (index) {
@@ -99,11 +112,39 @@
   .home {
   }
   .nav {
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
+  .matrix-nav {
     margin-top: 5px;
   }
   .nva-icon {
     width: 60px;
     margin: 0 auto;
     /*background-color: #58b7ff;*/
+  }
+  .recommend {
+    padding: 15px 12px 0 12px;
+    /*background-color: #08e9ef;*/
+  }
+  .box1 {
+    height: 90px;
+    position: relative;
+    width: 950px;
+    /*background-color: antiquewhite;*/
+  }
+  .box1-item {
+    width: 130px;
+    height: 90px;
+    background-color: #ccc;
+    display:inline-block;
+    margin-left: 6px;
+    float: left;
+    text-align: center;
+    line-height: 90px;
+  }
+  .box1-item:first-child {
+    margin-left: 0;
   }
 </style>
