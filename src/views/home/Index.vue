@@ -13,12 +13,9 @@
 
     <div class="nav">
       <flexbox :gutter="0">
-        <flexbox-item>
-          <div class="flex-demo">1</div>
+        <flexbox-item v-for="(item, index) in navList" :key="index">
+          <shop-nav class="nva-icon" :title="item.title" :src="item.img" :link="item.url"></shop-nav>
         </flexbox-item>
-        <flexbox-item><div class="flex-demo">2</div></flexbox-item>
-        <flexbox-item><div class="flex-demo">3</div></flexbox-item>
-        <flexbox-item><div class="flex-demo">4</div></flexbox-item>
       </flexbox>
     </div>
   </div>
@@ -26,6 +23,7 @@
 
 <script>
   import { Swiper, SwiperItem, Cell, Marquee, MarqueeItem, Flexbox, FlexboxItem } from 'vux'
+  import ShopNav from '@/components/ShopNav'
 
   const baseList = [{
     url: 'javascript:',
@@ -47,11 +45,29 @@
     '零哥章魚 完成传奇世界H5-王者归来任务'
   ]
 
+  const navList = [{
+    url: '/order',
+    img: '../../../static/vegetables.png',
+    title: '蔬菜'
+  }, {
+    url: 'javascript:',
+    img: '../../../static/fruit.png',
+    title: '水果'
+  }, {
+    url: 'javascript:',
+    img: '../../../static/vegetables.png',
+    title: '素材',
+  }, {
+    url: 'javascript:',
+    img: '../../../static/vegetables.png',
+    title: '素材',
+  }]
   export default {
     data () {
       return {
         demo01_list: baseList,
         demo04_list: textList,
+        navList: navList,
         demo02_index: 1,
         goToCell: '跳转',
         news: '公告',
@@ -65,7 +81,8 @@
       Marquee,
       MarqueeItem,
       Flexbox,
-      FlexboxItem
+      FlexboxItem,
+      ShopNav
     },
     methods: {
       demo01_onIndexChange (index) {
@@ -80,14 +97,13 @@
 
 <style scoped>
   .home {
-    /*background-color: #990f34;*/
   }
-  .flex-demo {
-    height: 50px;
-    text-align: center;
-    color: #fff;
-    background-color: #20b907;
-    /*border-radius: 4px;*/
-    /*background-clip: padding-box;*/
+  .nav {
+    margin-top: 5px;
+  }
+  .nva-icon {
+    width: 60px;
+    margin: 0 auto;
+    /*background-color: #58b7ff;*/
   }
 </style>
