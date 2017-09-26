@@ -29,6 +29,19 @@
       </div>
     </div>
 
+    <div class="goods">
+      <div class="title">
+        <h1 class="name">
+          <span class="text">优选水果</span>
+          <em class="more">更多 ></em>
+        </h1>
+        <div class="line"></div>
+      </div>
+      <div class="mail-img">
+        <img src="">
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -46,9 +59,8 @@
     title: '送你一辆车'
   }, {
     url: 'javascript:',
-    img: 'https://static.vux.li/demo/5.jpg',
-    title: '送你一次旅行',
-    fallbackImg: 'https://static.vux.li/demo/3.jpg'
+    img: 'https://static.vux.li/demo/3.jpg',
+    title: '送你一次旅行'
   }]
 
   const textList = [
@@ -129,8 +141,8 @@
     /*background-color: #08e9ef;*/
   }
   .box1 {
-    height: 90px;
-    position: relative;
+    /*height: 90px;*/
+    /*position: relative;*/
     width: 950px;
     /*background-color: antiquewhite;*/
   }
@@ -138,13 +150,48 @@
     width: 130px;
     height: 90px;
     background-color: #ccc;
-    display:inline-block;
+    /*display:inline-block;*/
     margin-left: 6px;
     float: left;
-    text-align: center;
-    line-height: 90px;
   }
   .box1-item:first-child {
     margin-left: 0;
+  }
+  .goods {
+    height: 200px;
+    margin-top: 10px;
+    background-color: cadetblue;
+  }
+  .goods .title .name {
+    width: 100%;
+    height: 50px;
+    /*background-color: #EDD498;*/
+  }
+  .goods .title .name .text {
+    font-size: 22px;
+    width: 70%;
+    /*height: 50px;*/
+    float: left;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    padding-left: 15%;
+  }
+  .goods .title .name .more {
+    height: 50px;
+    font-size: 14px;
+    font-style: normal;
+    width: 15%;
+    float: right;
+    display: block;
+    line-height: 80px;
+    color: #cccccc;
+    /*background-color: darkcyan;*/
+  }
+  .goods .title .line {
+    height: 5px;
+    width: 25px;
+    background-color: #EDD498;
+    margin: 0 auto;
   }
 </style>
