@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="swiper">
-      <swiper :list="demo01_list" v-model="demo02_index" @on-index-change="demo01_onIndexChange"></swiper>
+      <swiper :list="swipers" v-model="demo02_index" @on-index-change="demo01_onIndexChange"></swiper>
     </div>
     <div class="msg">
       <cell :title="news" primary="conten" style="height: 20px;">
@@ -22,8 +22,8 @@
       <div class="recommend">
         <divider style="width: 140px; margin: 0 auto; font-size: 12px; color: #EDD498">{{ recommend }}</divider>
         <scroller lock-y :scrollbar-x=false>
-          <div class="box1">
-            <div class="box1-item" v-for="i in 7"><span>{{' ' + i + ' '}}</span></div>
+          <div class="sells">
+            <div class="item" v-for="(item, index) in recommends" :key="index" @click="recomm(item.url)"><img :src="item.img"/></div>
           </div>
         </scroller>
       </div>
@@ -85,12 +85,34 @@
     img: '../../../static/vegetables.png',
     title: '素材',
   }]
+  const recommends = [{
+    url: '/order',
+    img: '../../../static/recommend/juzi.png',
+    title: '桔子'
+  }, {
+    url: '/order',
+    img: '../../../static/recommend/lanmei.png',
+    title: '蓝莓'
+  }, {
+    url: '/order',
+    img: '../../../static/recommend/lizi.png',
+    title: '梨子'
+  }, {
+    url: '/order',
+    img: '../../../static/recommend/pingguo.jpg',
+    title: '苹果'
+  }, {
+    url: '/order',
+    img: '../../../static/recommend/xiangjiao.png',
+    title: '香蕉'
+  }]
   export default {
     data () {
       return {
-        demo01_list: baseList,
+        swipers: baseList,
         demo04_list: textList,
         navList: navList,
+        recommends: recommends,
         demo02_index: 1,
         goToCell: '跳转',
         news: '公告',
@@ -115,7 +137,11 @@
       },
       onItemClick () {
         console.log('on item click')
-      }
+      },
+      recomm(url) {
+        if (/^javas/.test(this.link) || !this.link) return
+        this.$router.push(url)
+      },
     }
   }
 </script>
@@ -140,13 +166,13 @@
     padding: 15px 12px 0 12px;
     /*background-color: #08e9ef;*/
   }
-  .box1 {
+  .recommend .sells {
     /*height: 90px;*/
     /*position: relative;*/
-    width: 950px;
+    width: 680px;
     /*background-color: antiquewhite;*/
   }
-  .box1-item {
+  .recommend .sells .item {
     width: 130px;
     height: 90px;
     background-color: #ccc;
@@ -154,7 +180,11 @@
     margin-left: 6px;
     float: left;
   }
-  .box1-item:first-child {
+  .recommend .sells .item img {
+    width: 130px;
+    height: 90px;
+  }
+  .recommend .sells .item:first-child {
     margin-left: 0;
   }
   .goods {
