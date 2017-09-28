@@ -48,7 +48,7 @@
 <style scoped>
   .detail {
     width: 90px;
-    height: 190px;
+    height: 182px;
     /*background: darkkhaki;*/
     margin: 0 auto;
   }
@@ -74,8 +74,8 @@
     text-overflow:ellipsis;
   }
   .item figcaption .tag {
-    font-size: 8px;
-    width: 55px;
+    font-size: 10px;
+    width: 45px;
     margin: 3px 0;
     text-align: center;
     background-color: burlywood;
@@ -90,7 +90,7 @@
   }
   .icon {
     position: relative;
-    bottom: 22px;
+    bottom: 35px;
     left: 62px;
     width: 25px;
     height: 25px;

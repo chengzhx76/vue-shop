@@ -26,7 +26,7 @@
 
 <style scoped>
   .goods {
-    /*height: 800px;*/
+    /*height: 280px;*/
     width: 100%;
     margin-top: 10px;
     /*background-color: cadetblue;*/

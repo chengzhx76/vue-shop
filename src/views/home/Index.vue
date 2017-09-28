@@ -31,7 +31,7 @@
 
     <div class="shop-goods">
       <main-nav v-for="(item, index) in mainNav" :key="index" :title="item.title" :src="item.img" :link="item.url">
-        <flexbox :gutter="3">
+        <flexbox :gutter="3" style="margin-bottom: 10px">
           <flexbox-item v-for="(commodity, index) in item.commodities" :key="index">
             <good-list :name="commodity.name"
                        :img="commodity.img"
