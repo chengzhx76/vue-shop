@@ -29,17 +29,21 @@
       </div>
     </div>
 
-    <div class="goods">
-      <div class="title">
-        <h1 class="name">
-          <span class="text">优选水果</span>
-          <em class="more">更多 ></em>
-        </h1>
-        <div class="line"></div>
-      </div>
-      <div class="mail-img">
-        <img src="">
-      </div>
+    <div class="shop-goods">
+      <main-nav v-for="(item, index) in mainNav" :key="index" :title="item.title" :src="item.img" :link="item.url">
+        <flexbox :gutter="3">
+          <flexbox-item v-for="(commodity, index) in item.commodities" :key="index">
+            <good-list :name="commodity.name"
+                       :img="commodity.img"
+                       :link="commodity.url"
+                       :tag="commodity.tag"
+                       :price="commodity.price"
+                       :standard="commodity.standard">
+              <x-icon style="fill: red;" type="ios-plus-outline" size="24"></x-icon>
+            </good-list>
+          </flexbox-item>
+        </flexbox>
+      </main-nav>
     </div>
 
   </div>
@@ -48,6 +52,84 @@
 <script>
   import { Swiper, SwiperItem, Cell, Marquee, MarqueeItem, Flexbox, FlexboxItem, Divider, Scroller } from 'vux'
   import ShopNav from '@/components/ShopNav'
+  import MainNav from '@/views/home/MainNav'
+  import GoodList from '@/views/home/GoodList'
+
+  const mainNav = [{
+    url: 'javascript:',
+    img: '../../../static/show/baixiangguo1.jpg',
+    title: '优选水果',
+    commodities: [
+      {
+        url: 'javascript:',
+        img: '../../../static/goods/icon1.png',
+        name: '精选白心蜜柚',
+        standard: '1.25-1.6kg/粒',
+        tag: '送果蔬盐',
+        price: '10.9',
+      },
+      {
+        url: 'javascript:',
+        img: '../../../static/goods/icon2.png',
+        name: '精选红心蜜柚',
+        standard: '1.25-1.6kg/粒',
+        tag: '送果蔬盐',
+        price: '10.1',
+      },
+      {
+        url: 'javascript:',
+        img: '../../../static/goods/icon3.png',
+        name: '精选红心蜜柚',
+        standard: '1.25-1.6kg/粒',
+        tag: '送果蔬盐',
+        price: '10.1',
+      }
+    ]
+  }, {
+    url: 'javascript:',
+    img: '../../../static/show/baixiangguo1.jpg',
+    title: '送你一辆车',
+    commodities: [
+      {
+        url: 'javascript:',
+        img: '../../../static/goods/icon4.png',
+        name: '精选白心蜜柚',
+        standard: '1.25-1.6kg/粒',
+        tag: '送果蔬盐',
+        price: '10.9',
+      },
+      {
+        url: 'javascript:',
+        img: '../../../static/goods/icon5.png',
+        name: '精选白心蜜柚2',
+        standard: '1.25-1.6kg/粒',
+        tag: '送果蔬盐',
+        price: '10.1',
+      },
+    ]
+  }, {
+    url: 'javascript:',
+    img: '../../../static/show/mangguo.jpg',
+    title: '送你一次旅行',
+    commodities: [
+      {
+        url: 'javascript:',
+        img: '../../../static/goods/icon2.png',
+        name: '精选白心蜜柚',
+        standard: '1.25-1.6kg/粒',
+        tag: '送果蔬盐',
+        price: '10.9',
+      },
+      {
+        url: 'javascript:',
+        img: '../../../static/goods/icon5.png',
+        name: '精选白心蜜柚2',
+        standard: '1.25-1.6kg/粒',
+        tag: '送果蔬盐',
+        price: '10.1',
+      },
+    ]
+  }]
 
   const baseList = [{
     url: 'javascript:',
@@ -113,6 +195,7 @@
         demo04_list: textList,
         navList: navList,
         recommends: recommends,
+        mainNav: mainNav,
         demo02_index: 1,
         goToCell: '跳转',
         news: '公告',
@@ -129,7 +212,9 @@
       FlexboxItem,
       ShopNav,
       Divider,
-      Scroller
+      Scroller,
+      MainNav,
+      GoodList,
     },
     methods: {
       demo01_onIndexChange (index) {
@@ -139,7 +224,7 @@
         console.log('on item click')
       },
       recomm(url) {
-        if (/^javas/.test(this.link) || !this.link) return
+        if (/^javas/.test(this.url) || !this.url) return
         this.$router.push(url)
       },
     }
@@ -148,6 +233,7 @@
 
 <style scoped>
   .home {
+    padding-bottom: 70px;
   }
   .nav {
     background-color: #fff;
@@ -187,41 +273,7 @@
   .recommend .sells .item:first-child {
     margin-left: 0;
   }
-  .goods {
-    height: 200px;
-    margin-top: 10px;
-    background-color: cadetblue;
-  }
-  .goods .title .name {
-    width: 100%;
-    height: 50px;
-    /*background-color: #EDD498;*/
-  }
-  .goods .title .name .text {
-    font-size: 22px;
-    width: 70%;
-    /*height: 50px;*/
-    float: left;
-    display: block;
-    line-height: 50px;
-    text-align: center;
-    padding-left: 15%;
-  }
-  .goods .title .name .more {
-    height: 50px;
-    font-size: 14px;
-    font-style: normal;
-    width: 15%;
-    float: right;
-    display: block;
-    line-height: 80px;
-    color: #cccccc;
-    /*background-color: darkcyan;*/
-  }
-  .goods .title .line {
-    height: 5px;
-    width: 25px;
-    background-color: #EDD498;
-    margin: 0 auto;
+  .shop-goods {
+    background-color: #ffffff;
   }
 </style>

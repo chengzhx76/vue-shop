@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .goods {
+      height: 800px;
+      width: 100%;
+      margin-top: 10px;
+      background-color: cadetblue;
+    }
+    .goods .title .name {
+      width: 100%;
+      height: 42px;
+      /*background-color: #EDD498;*/
+    }
+    .goods .title .name .text {
+      font-size: 22px;
+      width: 70%;
+      /*height: 50px;*/
+      float: left;
+      display: block;
+      line-height: 50px;
+      text-align: center;
+      padding-left: 15%;
+    }
+    .goods .title .name .more {
+      height: 42px;
+      font-size: 14px;
+      font-style: normal;
+      width: 15%;
+      float: right;
+      display: block;
+      line-height: 60px;
+      color: #cccccc;
+      /*background-color: darkcyan;*/
+    }
+    .goods .title .line {
+      height: 5px;
+      width: 25px;
+      background-color: #EDD498;
+      margin: 0 auto;
+    }
+    .goods .show {
+      width: 88%;
+      margin: 10px auto;
+      background: darkkhaki;
+    }
+    .goods .show img {
+      width: 100%;
+      border-radius: 50px;
+      /*border-radius: 50px;*/
+    }
+    .goods .item {
+      width: 90px;
+      height: 190px;
+      background: darkkhaki;
+    }
+    .goods .item img {
+      width: 90px;
+      height: 105px;
+    }
+    .goods .item figcaption {
+    }
+    .goods .item figcaption .info {
+    }
+    .goods .item figcaption .info .name {
+      font-size: 14px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .goods .item figcaption .info .standard {
+      font-size: 13px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .goods .item figcaption .tag {
+      font-size: 8px;
+      width: 55px;
+      margin: 3px 0;
+      text-align: center;
+      background-color: burlywood;
+      border-radius: 4px;
+    }
+    .goods .item figcaption .price .unit {
+      font-size: 14px;
+      padding-right: 1px;
+    }
+    .goods .item figcaption .price .text {
+      font-size: 16px;
+    }
+    .goods .item figcaption .icon {
+      position: relative;
+      bottom: 20px;
+      left: 55px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="goods">
+  <div class="title">
+    <h1 class="name">
+      <span class="text">优选水果</span>
+      <em class="more">更多 ></em>
+    </h1>
+    <div class="line"></div>
+  </div>
+  <div class="show">
+    <img src="static/show/baixiangguo1.jpg">
+  </div>
+  <figure class="item">
+    <img src="static/goods/icon1.png">
+    <figcaption>
+      <div class="info">
+        <p class="name">精选白心蜜柚</p>
+        <p class="standard">1.25-1.6kg/粒</p>
+      </div>
+      <div class="tag">送果蔬盐</div>
+      <div class="price">
+        <span class="unit">&yen;</span><span class="text">10.9</span>
+      </div>
+      <div class="icon">fffff</div>
+    </figcaption>
+  </figure>
+</div>
+
+</body>
+</html>

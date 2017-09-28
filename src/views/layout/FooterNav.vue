@@ -1,34 +1,19 @@
 <template>
-  <div class="tabbar">
-    <tabbar>
-      <tabbar-item link="/home">
-        <img slot="icon" src="../../assets/icon_nav_msg.png">
-        <span slot="label">首页</span>
-      </tabbar-item>
-      <tabbar-item link="/order">
-        <img slot="icon" src="../../assets/icon_nav_article.png">
-        <span slot="label">订单</span>
-      </tabbar-item>
-      <tabbar-item link="/me">
-        <img slot="icon" src="../../assets/icon_nav_cell.png">
-        <span slot="label">我的</span>
-      </tabbar-item>
-    </tabbar>
-  </div>
+  <ul class="footer-nav">
+    <slot></slot>
+  </ul>
 </template>
 
 <script>
-  import { Tabbar, TabbarItem } from 'vux'
-
-  export default {
-    components: {
-      Tabbar,
-      TabbarItem
-    }
-  }
 </script>
 
 <style scoped>
-  .tabbar {
+  .footer-nav {
+    height: 53px;
+    width: 100%;
+    background-color: #f4f4f4;
+    position:fixed;
+    bottom: 0;
+    left: 0;
   }
 </style>
