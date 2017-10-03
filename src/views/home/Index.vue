@@ -65,6 +65,7 @@
     title: '优选水果',
     commodities: [
       {
+        id: "1",
         url: 'javascript:',
         img: '../../../static/goods/icon1.png',
         name: '精选白心蜜柚',
@@ -228,6 +229,7 @@
         console.log('on item click')
       },
       recomm(url) {
+        console.log("--recomm--")
         if (/^javas/.test(this.url) || !this.url) return
         this.$router.push(url)
       },

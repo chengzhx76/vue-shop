@@ -3,11 +3,11 @@
     <div class="title">
       <h1 class="name">
         <span class="text">{{ title }}</span>
-        <em class="more">更多 ></em>
+        <em class="more" @click="more(link)">更多 ></em>
       </h1>
       <div class="line"></div>
     </div>
-    <div class="show">
+    <div class="show" @click="more(link)">
       <img :src="src">
     </div>
     <slot></slot>
@@ -20,6 +20,13 @@
       src: String,
       title: String,
       link: [String, Object]
+    },
+    methods: {
+      more(url) {
+        console.log("--more--")
+        if (/^javas/.test(this.url) || !this.url) return
+        this.$router.push(url)
+      }
     }
   }
 </script>

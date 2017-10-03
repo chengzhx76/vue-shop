@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <figure class="item" @click="jump(link)">
+    <figure class="item" @click="detail(link)">
       <img :src="img">
       <figcaption>
         <div class="info">
@@ -13,7 +13,7 @@
         </div>
       </figcaption>
     </figure>
-    <div class="icon" @click="add">
+    <div class="icon" @click="add(id)">
       <slot></slot>
     </div>
   </div>
@@ -22,6 +22,7 @@
 <script>
   export default{
     props: {
+      id: String,
       img: String,
       name: String,
       standard: String,
@@ -35,11 +36,14 @@
       }
     },
     methods: {
-      add() {
-        console.log("eeeeeeeeee")
+      add(id) {
+        console.log("--add--")
+//        this.$router.push(url)
       },
-      jump() {
-        console.log("ssssss")
+      detail(url) {
+        console.log("--detail--")
+        if (/^javas/.test(this.url) || !this.url) return
+        this.$router.push(url)
       }
     }
   }
@@ -90,7 +94,7 @@
   }
   .icon {
     position: relative;
-    bottom: 35px;
+    bottom: 27px;
     left: 62px;
     width: 25px;
     height: 25px;
