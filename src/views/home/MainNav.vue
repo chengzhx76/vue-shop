@@ -36,6 +36,7 @@
     /*height: 280px;*/
     width: 100%;
     margin-top: 10px;
+    padding-bottom: 5px;
     /*background-color: cadetblue;*/
   }
   .goods .title .name {

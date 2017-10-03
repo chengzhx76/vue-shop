@@ -23,9 +23,9 @@
 
 <style scoped>
   .item {
-    width: 33%;
+    width: 25%;
     height: 53px;
-    margin-left: 1px;
+    /*margin-left: 1px;*/
     margin-top: 3px;
     float: left;
     list-style: none;

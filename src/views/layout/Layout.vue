@@ -23,11 +23,15 @@
   }, {
     url: '/order',
     img: '../../../static/vegetables.png',
-    title: '首页'
+    title: '商城'
+  }, {
+    url: '/order',
+    img: '../../../static/vegetables.png',
+    title: '购物车'
   }, {
     url: '/me',
     img: '../../../static/vegetables.png',
-    title: '首页'
+    title: '我的'
   }]
 
   export default {
