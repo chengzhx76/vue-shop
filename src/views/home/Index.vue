@@ -1,8 +1,10 @@
 <template>
   <div class="home">
+    <!-- 轮播图 -->
     <div class="swiper">
       <swiper :list="swipers" v-model="demo02_index" @on-index-change="demo01_onIndexChange"></swiper>
     </div>
+    <!-- 消息 -->
     <div class="msg">
       <cell :title="news" primary="conten" style="height: 20px;">
         <marquee style="margin-left: 10px;">
@@ -10,6 +12,7 @@
         </marquee>
       </cell>
     </div>
+    <!-- 导航 -->
     <div class="nav">
       <div class="matrix-nav">
         <flexbox :gutter="0">
@@ -29,6 +32,7 @@
       </div>
     </div>
 
+    <!-- 首页商品列表 -->
     <div class="shop-goods">
       <main-nav v-for="(item, index) in mainNav" :key="index" :title="item.title" :src="item.img" :link="item.url">
         <flexbox :gutter="3" style="margin-bottom: 10px">
