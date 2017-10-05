@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 import Layout from '@/views/layout/Layout'
 import Home from '@/views/home'
-import Order from '@/views/order'
+import Category from '@/views/category'
 import Me from '@/views/me'
 
 Vue.use(Router)
@@ -21,9 +21,9 @@ export default new Router({
           component: Home
         },
         {
-          name: 'Order',
-          path: 'order',
-          component: Order
+          name: 'Category',
+          path: 'category',
+          component: Category
         },
         {
           name: 'Me',

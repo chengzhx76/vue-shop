@@ -21,7 +21,7 @@
     img: '../../../static/vegetables.png',
     title: '首页'
   }, {
-    url: '/order',
+    url: '/category',
     img: '../../../static/vegetables.png',
     title: '商城'
   }, {
