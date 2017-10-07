@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Layout from '@/views/layout/Layout'
 import Home from '@/views/home'
 import Category from '@/views/category'
+import Content from '@/views/category/Content'
 import Me from '@/views/me'
 
 Vue.use(Router)
@@ -23,7 +24,14 @@ export default new Router({
         {
           name: 'Category',
           path: 'category',
-          component: Category
+          component: Category,
+          children: [
+            {
+              name: 'Content',
+              path: 'content',
+              component: Content
+            }
+          ]
         },
         {
           name: 'Me',

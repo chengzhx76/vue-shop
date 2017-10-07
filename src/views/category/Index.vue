@@ -1,13 +1,12 @@
 <template>
   <div class="main-category">
     <ul class="nav">
-      <li>daew</li>
+      <li @click="click('lll')">daew</li>
       <li class="action"><em class="mark"></em>ddd</li>
       <li>ddd</li>
       <li>ddd</li>
     </ul>
     <div class="content">
-      kk
       <router-view></router-view>
 
       <!--<div class="filter">
@@ -34,8 +33,8 @@
       Swiper
     },
     methods: {
-      demo01_onIndexChange (index) {
-        this.demo01_list = index
+      click (url) {
+        console.log(url)
       }
     }
   }
